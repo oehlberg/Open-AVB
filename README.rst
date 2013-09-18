@@ -1,3 +1,19 @@
+AVB Swarm
+=========
+
+This is a fork of the AVB Code for deployment @ Berkeley.  Things to note about AVB Deployment:
+
+*You must have a recent Kernel (Ubuntu 12.04 LTS is too old, use at least 13.04)
+*install libpcap for the simple listener
+*AVB needs to be enabled on the switch (enable avb ports all)
+  -check to make sure it is enabled (show avb)
+*Compile and install the latest kernel module (/kmod/igb/igb_avb)
+*The foloowing need to be running in order to run the simple listener
+  -GPTP: sudo Open-AVB/daemons/gptp/linux/build/obj/daemon_cl eth0
+  -MRPD: sudo Open-AVB/daemons/mrpd/mrpd -i eth0 -mvs
+*The simple listener has a hard coded MAC Address in the code.  This implementaion should change, but until it is it needs to be 
+
+
 Open AVB
 ========
 maintainer: eric.mann AT intel.com
